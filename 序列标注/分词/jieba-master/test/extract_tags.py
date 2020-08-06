@@ -1,9 +1,9 @@
+from optparse import OptionParser
+import jieba.analyse
+import jieba
 import sys
 sys.path.append('../')
 
-import jieba
-import jieba.analyse
-from optparse import OptionParser
 
 USAGE = "usage:    python extract_tags.py [file name] -k [top k]"
 
