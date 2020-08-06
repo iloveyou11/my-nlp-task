@@ -1,4 +1,4 @@
-目前有一些自然语言处理工具，可以快速地完成NLP任务，如：
+**目前有一些自然语言处理工具，可以快速地完成NLP任务，如：**
 1. `NLTK`:处于领先的地位，提供了 WordNet 、分类、分词、标注、语法分析、语义推理等类库。
 2. `Pattern`:包括词性标注工具，N元搜索，情感分析，WordNet，支持机器学习的向量空间模型，聚类，向量机。
 3. `TextBlob`:提供了一些简单的api，例如词性标注、名词短语抽取、情感分析、分类、翻译等等。
@@ -12,9 +12,9 @@
 11. `HanNLP`:由一系列模型与算法组成的Java工具包，提供分词、词法分析、句法分析、语义理解等完备的功能。
 12. `Jiagu`:以BiLSTM等模型为基础，使用大规模语料训练而成，提供中文分词、词性标注、命名实体识别、情感分析、知识图谱关系抽取、关键词抽取、文本摘要、新词发现、情感分析、文本聚类等常用功能。
 
-这里整理一些知名的NLP开源项目，分别为：
+**这里整理一些知名的NLP开源项目，分别为：**
 
-#### 词义消歧
+## 词义消歧
 消歧任务主要分以下几种：
 1. 分词的消歧
 2. 多义词的具体词义
@@ -30,19 +30,23 @@
 [WordMultiSenseDisambiguation](https://github.com/liuhuanyong/WordMultiSenseDisambiguation)
 WordMultiSenseDisambiguation, chinese multi-wordsense disambiguation based on online bake knowledge base and semantic embedding similarity compute,基于百科知识库的中文词语多义项获取与特定句子词语语义消歧. 
 
-#### 拼写纠错
+## 拼写纠错
 [bert_chinese-master](https://github.com/JohanyCheung/bert_chinese/tree/master/corrector)
 直接预训练的bert模型实现中文的文本纠错，可参照学习bert如何做纠错任务
+
 [FASPell-master](https://github.com/iqiyi/FASPell/blob/master)
 使用bert进行预训练+微调，再经过CSD过滤器得到最终结果。支持简体中文文本； 繁体中文文本； 人类论文； OCR结果等
+
 [pycorrector-master](https://github.com/shibing624/pycorrector)
 Pycorrector：当前主流的中文纠错框架，支持规则和端到端模型
+
 [SoftMaskedBert-master](https://github.com/hiyoung123/SoftMaskedBert)
 对论文Soft-Masked Bert 的复现，使用判别模型BiGRU+纠错模型BERT，实现端到端的纠错。
+
 [YoungCorrector-master](https://github.com/hiyoung123/YoungCorrector)
 基于Pycorrector改造，实现基于纯规则的纠错系统。整个系统框架比较详细。与Pycorrector准确度差不多，耗时短（归功于前向最大匹配替代了直接索引混淆词典）
 
-#### 文本分类
+## 文本分类
 **文本分类常用方法如下：**
 1. 基于词典模板的规则分类
 2. 基于过往日志匹配（适用于搜索引擎）
@@ -63,16 +67,21 @@ Pycorrector：当前主流的中文纠错框架，支持规则和端到端模型
 | HAN	| HAN模型首先利用Bi-GRU捕捉单词级别的上下文信息。由于句子中的每个单词对于句子表示并不是同等的贡献，因此，作者引入注意力机制来提取对句子表示有重要意义的词汇，并将这些信息词汇的表征聚合起来形成句子向量。| 
 | BERT| BERT的模型架构是一个多层的双向Transformer编码器(Transformer的原理及细节可以参考Attentionisallyouneed)。作者采用两套参数分别生成BERTBASE模型和BERTLARGE模型(细节描述可以参考原论文)，所有下游任务可以在这两套模型进行微调。| 
 | VDCNN	| 目前NLP领域的模型，无论是机器翻译、文本分类、序列标注等问题大都使用浅层模型。VDCNN探究的是深层模型在文本分类任务中的有效性，最优性能网络达到了29层。| 
+
+
 [Chinese-Text-Classification-Pytorch-master](https://github.com/649453932/Chinese-Text-Classification-Pytorch)
 中文文本分类，TextCNN，TextRNN，FastText，TextRCNN，BiLSTM_Attention, DPCNN, Transformer, 基于pytorch，开箱即用。
+
 [Naive-Bayes-Classifier-master](https://github.com/lining0806/Naive-Bayes-Classifier)
 使用朴素贝叶斯进行文本分类：
+
 [text-classification-cnn-rnn-master](https://github.com/gaussic/text-classification-cnn-rnn)
 使用CNN以及RNN进行中文文本分类
+
 [text-cnn-master](https://github.com/cjymz886/text-cnn)
 使用CNN模型进行文本分类
 
-#### 序列标注
+## 序列标注
 序列标注包括了以下几个方面：
 1. `中文分词`——人们提出了{B,M,E,S}这种最流行的标注集，{B,M,E,S}分为代表{Begin,Middle,End,Single}
 2. `词性标注`——根据单词序列，标注出词性序列
@@ -89,12 +98,14 @@ Pycorrector：当前主流的中文纠错框架，支持规则和端到端模型
 
 【词性标注】[bi-lstm-crf-master](https://github.com/GlassyWing/bi-lstm-crf)
 通过Bi-LSTM获得每个词所对应的所有标签的概率，取最大概率的标注即可获得整个标注序列，模型架构变为Embedding + Bi-LSTM + CRF
+
 【分词】[jieba-master](https://github.com/fxsjy/jieba)
 “结巴”中文分词：做最好的 Python 中文分词组件
+
 【命名实体识别】[named_entity_recognition](https://github.com/luopeixiang/named_entity_recognition)
 中文命名实体识别（包括多种模型：HMM，CRF，BiLSTM，BiLSTM+CRF的具体实现）
 
-#### 主题聚类
+## 主题聚类
 文本聚类的主要步骤:
 1. 分词
 2. 去除停用词
